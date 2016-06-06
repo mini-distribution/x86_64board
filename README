@@ -1,86 +1,42 @@
 Name:
 
-   Hummingboard Mini Distribution
+   x86board Mini Distribution
 
 About:
 
-   A basic GNU/Linux distribution for the Hummingboard from solid-run.com
+   A basic GNU/Linux distribution for x86board (test)
 
 Main features:
 
-   * Arm Cortex A9, Neon, FPU optimized toolchain
+   * x86_64 toolchain
    * Glibc C library
    * Systemd init system
    * GNU/Linux system utilities (no busybox)
    * Ethernet network support
    * OpenSSH client/server
-   * Gstreamer-1.8.x (including iMX HW enc/dec plugins)
-   * Vivante GPU drivers (including samples)
-   * QT5 (including examples)
 
 Main builds:
 
    fs      - Filesystem
-   linux   - Linux kernel
-   u-boot  - Bootloader
 
 Quick build guide:
 
-   $ git clone --recursive git://github.com/mini-distribution/hummingboard.git
-   $ cd hummingboard
+   $ git clone --recursive git://github.com/mini-distribution/x86board.git
+   $ cd x86board
    $ buildgear build fs
-   $ buildgear build u-boot
-
-Prebuilt images:
-
-   For demo purpose, prebuilt images are available here:
-   http://mini-distribution.io/prebuilds/hummingboard
 
 Login details:
 
     Username: root
     Password: root
 
-Example feature tests:
-
-   * Gstreamer video output test:
-
-       $ gst-launch-1.0 videotestsrc ! imxipuvideosink
-
-   * Gstreamer H264/AAC decoding:
-   
-       $ echo 0 > /sys/class/graphics/fbcon/cursor_blink
-       $ wget https://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_h264.mov
-       $ gst-launch-1.0 playbin uri=file:///root/big_buck_bunny_1080p_h264.mov video-sink=imxipuvideosink
-
-   * QT5 demos are available in /opt/qt5/examples/*
-
 Installation:
 
-   To install on SD card simply follow the steps below:
-
-   (replace X with the device number of your SD card)
-
-   1. Install 1st stage bootloader:
-      $ sudo dd if=SPL of=/dev/sdX bs=1K seek=1
-
-   2. Install 2nd stage bootloader:
-      $ sudo dd if=u-boot.img of=/dev/sdX bs=1K seek=42
-
-   3. Create a single primary partition (default to 2048 start sector):
-      $ echo -e "n\np\n1\n\n\nw\n" | sudo fdisk /dev/sdX
-
-   4. Install ext4 type filesystem:
-      $ sudo mkfs.ext4 -L rootfs /dev/sdX1
-
-   5. Install root filesystem (includes kernel in /boot directory):
-      <mount your new rootfs partition>
-      $ cd <your rootfs mount point>
-      $ sudo tar xf fs.tar.xz
+   TBD
 
 Build system requirements:
 
-   Tested on Ubuntu 15.10 (64-bit x86) with the following additional packages
+   Tested on Ubuntu 16.04 (64-bit x86) with the following additional packages
    installed:
 
    $ sudo apt-get install unzip groff bison flex gperf texinfo xsltproc \
@@ -121,4 +77,4 @@ Filesystem layout:
 
 Maintainer:
 
-   Martin Lund <martin.lund@keep-it-simple.com>
+   N/A
