@@ -1,7 +1,7 @@
 # Build files configuration
 
 # Set host system name
-HOST="arm-cortex_a9-linux-gnueabi"
+HOST="x86_64-pc-linux-gnu"
 
 # Make all cross builds depend on cross toolchain
 CROSS_DEPENDS=native/crosstool-ng
@@ -20,7 +20,7 @@ PATH="$NATIVE_SYSROOT/usr/bin:$PATH"
 JOBS=`cat /proc/cpuinfo | grep processor | wc -l`
 
 # Layer configuration
-LAYERS=(hummingboard default)
+LAYERS=(x86board default)
 
 # Pkg-config cross configuration
 if [ "$BUILD_TYPE" = "cross" ]; then

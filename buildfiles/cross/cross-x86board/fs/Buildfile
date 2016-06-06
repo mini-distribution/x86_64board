@@ -7,21 +7,11 @@ release=1
 options=(nostrip)
 source=(asound.conf)
 depends=(core
-         u-boot
-         linux
          net-tools
          traceroute
          alsa-utils
          connman
-         vim
-         gstreamer
-         gst-plugins-base
-         gst-plugins-good
-         gst-plugins-bad
-         gst-plugins-ugly
-         gstreamer-imx
-         imx-gpu-viv
-         qtbase)
+         vim)
 
 build() {
    # Copy fully populated sysroot
@@ -33,11 +23,7 @@ build() {
    # Set login issue
    echo -e "Hummingboard Mini Distribution $version\n" > $PKG/etc/issue
 
-   # Add ALSA configuration (use onboard audio by default)
-   install -m 0644 $SRC/asound.conf $PKG/etc
-
    # Cleanup
-   rm -r $PKG/opt/qt5-native
    cd $PKG/usr/include; rm -rf !(python|python?.?)
    find $PKG/usr/lib -name '*.a'    -delete -o \
                      -name '*.la'   -delete

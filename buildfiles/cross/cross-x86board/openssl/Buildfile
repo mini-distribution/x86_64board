@@ -1,0 +1,29 @@
+# Description: Secure Sockets Layer and Transport Layer Security tools
+# URL: http://www.openssl.org
+# License: OpenSSL
+
+name=openssl
+version=1.0.2h
+release=1
+source=(ftp://ftp.openssl.org/source/openssl-$version.tar.gz
+        pod2man.patch)
+depends=zlib
+
+build() {
+   cd $name-$version
+
+   ./Configure --prefix=/usr \
+               --cross-compile-prefix=$HOST- \
+               --install_prefix=$PKG \
+               --openssldir=/etc/ssl \
+               no-krb5 \
+               zlib-dynamic \
+               threads \
+               shared \
+               linux-x86_64
+
+   patch -p1 < $SRC/pod2man.patch
+
+   make -j $JOBS
+   make MANDIR=/usr/share/man MANSUFFIX=ssl install
+}

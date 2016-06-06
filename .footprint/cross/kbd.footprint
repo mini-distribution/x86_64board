@@ -10,6 +10,7 @@ drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/kbdrate
 -rwxr-xr-x	root/root	usr/bin/loadkeys
 -rwxr-xr-x	root/root	usr/bin/openvt
+-rwxr-xr-x	root/root	usr/bin/resizecons
 -rwxr-xr-x	root/root	usr/bin/setfont
 -rwxr-xr-x	root/root	usr/bin/setkeycodes
 -rwxr-xr-x	root/root	usr/bin/setleds
