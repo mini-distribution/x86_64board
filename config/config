@@ -20,7 +20,7 @@ PATH="$NATIVE_SYSROOT/usr/bin:$PATH"
 JOBS=`cat /proc/cpuinfo | grep processor | wc -l`
 
 # Layer configuration
-LAYERS=(x86board default)
+LAYERS=(x86_64board default)
 
 # Pkg-config cross configuration
 if [ "$BUILD_TYPE" = "cross" ]; then
