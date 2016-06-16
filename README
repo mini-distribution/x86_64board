@@ -1,10 +1,10 @@
 Name:
 
-   x86board Mini Distribution
+   x86_64board Mini Distribution
 
 About:
 
-   A basic GNU/Linux distribution for x86board (test)
+   A basic GNU/Linux distribution for x86_64
 
 Main features:
 
@@ -21,8 +21,8 @@ Main builds:
 
 Quick build guide:
 
-   $ git clone --recursive git://github.com/mini-distribution/x86board.git
-   $ cd x86board
+   $ git clone --recursive git://github.com/mini-distribution/x86_64board.git
+   $ cd x86_86board
    $ buildgear build fs
 
 Login details:
@@ -36,7 +36,7 @@ Installation:
 
 Build system requirements:
 
-   Tested on Ubuntu 16.04 (64-bit x86) with the following additional packages
+   Tested on Debian 8 (64-bit x86) with the following additional packages
    installed:
 
    $ sudo apt-get install unzip groff bison flex gperf texinfo xsltproc \
