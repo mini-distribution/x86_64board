@@ -18,10 +18,10 @@ build() {
    cp -a $SYSROOT/* $PKG
 
    # Set host name
-   echo "hummingboard" > $PKG/etc/hostname
+   echo "x86_64board" > $PKG/etc/hostname
 
    # Set login issue
-   echo -e "Hummingboard Mini Distribution $version\n" > $PKG/etc/issue
+   echo -e "x86_64board Mini Distribution $version\n" > $PKG/etc/issue
 
    # Cleanup
    cd $PKG/usr/include; rm -rf !(python|python?.?)
